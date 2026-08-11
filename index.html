@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohammed Sayeed — AI Agent Builder</title>
+<meta name="description" content="I build production grade AI Agents that take repetitive work off your team and run on their own with little to no supervision." />
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="Mohammed Sayeed — AI Agent Builder" />
+<meta property="og:description" content="I build production grade AI Agents that take repetitive work off your team and run on their own with little to no supervision." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============ AMBIENT LIGHT LAYER (site-wide black + green glow) ============ -->
+<div class="ambient" aria-hidden="true">
+  <div class="ambient__grain"></div>
+</div>
+
+<!-- ============ NAVIGATION (fixed) ============ -->
+<header class="nav" id="nav">
+  <a href="#hero" class="nav__brand">Mohammed Sayeed</a>
+
+  <nav class="nav__links" id="navLinks" aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn--wa btn--sm nav__cta" href="https://wa.me/919980301901?text=Hi%20Mohammed%2C%20I%20saw%20your%20site%20and%20I%27d%20like%20to%20talk%20about%20an%20AI%20agent." target="_blank" rel="noopener">
+      <span class="btn__ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 2.13 11.9c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.21h.01a9.9 9.9 0 0 0 9.9-9.9A9.9 9.9 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.81.83-3.03-.2-.31a8.17 8.17 0 0 1-1.25-4.36 8.22 8.22 0 1 1 8.22 8.22Zm4.5-6.15c-.24-.12-1.46-.72-1.69-.8-.22-.09-.39-.12-.55.12s-.63.8-.77.96c-.14.17-.28.18-.52.06a6.72 6.72 0 0 1-3.36-2.94c-.25-.44.25-.4.72-1.35.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.61 4.15 3.66 1.54.67 2.15.72 2.92.61.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.46-.29Z"/></svg>
+      </span>
+      WhatsApp
+    </a>
+  </nav>
+
+  <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="hero">
+  <!-- light bar + spill, mirrors hero reference -->
+  <div class="hero__light" id="heroLight" aria-hidden="true">
+    <div class="hero__bar"></div>
+    <div class="hero__spill"></div>
+  </div>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow reveal">
+      <span class="dot" aria-hidden="true"></span>
+      Mohammed Sayeed <span class="sep" aria-hidden="true">/</span> <em>AI Agent Builder</em>
+    </p>
+
+    <h1 class="hero__title display" data-split>I build production grade AI Agents</h1>
+
+    <p class="hero__sub reveal" data-delay="1">
+      that take repetitive work off your team and run on their own with little to no supervision.
+    </p>
+
+    <div class="hero__actions reveal" data-delay="2">
+      <a class="btn btn--wa btn--lg magnetic" href="https://wa.me/919980301901?text=Hi%20Mohammed%2C%20I%20saw%20your%20site%20and%20I%27d%20like%20to%20talk%20about%20an%20AI%20agent." target="_blank" rel="noopener">
+        <span class="btn__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 2.13 11.9c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.21h.01a9.9 9.9 0 0 0 9.9-9.9A9.9 9.9 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.81.83-3.03-.2-.31a8.17 8.17 0 0 1-1.25-4.36 8.22 8.22 0 1 1 8.22 8.22Zm4.5-6.15c-.24-.12-1.46-.72-1.69-.8-.22-.09-.39-.12-.55.12s-.63.8-.77.96c-.14.17-.28.18-.52.06a6.72 6.72 0 0 1-3.36-2.94c-.25-.44.25-.4.72-1.35.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.61 4.15 3.66 1.54.67 2.15.72 2.92.61.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.46-.29Z"/></svg>
+        </span>
+        Message me on WhatsApp
+      </a>
+      <a class="btn btn--ghost btn--lg" href="#contact">Book a call</a>
+    </div>
+
+    <!-- ===== PHOTO PLACEHOLDER — REPLACE THIS ===== -->
+    <figure class="photo photo--hero reveal" data-delay="3">
+      <div class="photo__frame">
+        <!-- Drop a file named exactly  mohammed-sayeed.jpg  into the assets folder and it
+             appears here automatically. Until then, the placeholder below shows instead.
+             No code editing needed. -->
+        <img class="photo__img" src="assets/mohammed-sayeed.jpg" alt="Mohammed Sayeed" onerror="this.remove()" />
+        <div class="photo__ph">
+          <span class="photo__mark">[ PHOTO PLACEHOLDER ]</span>
+          <span class="photo__hint">Drop your portrait into the assets folder, named mohammed-sayeed.jpg</span>
+        </div>
+        <span class="photo__corner photo__corner--tl" aria-hidden="true"></span>
+        <span class="photo__corner photo__corner--br" aria-hidden="true"></span>
+      </div>
+    </figure>
+  </div>
+
+  <a class="hero__scroll" href="#about" aria-label="Scroll to About">
+    <span class="hero__scrollLine" aria-hidden="true"></span>
+    Scroll
+  </a>
+</section>
+
+<!-- ============ 2. ABOUT ME ============ -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <p class="sec-label reveal"><span class="sec-label__num">/01</span> About me</p>
+
+    <div class="about__grid">
+      <div class="about__text">
+        <h2 class="display about__statement" data-split>
+          I build agentic AI workflows that automate the repetitive, manual work quietly eating hours of your team.
+        </h2>
+        <p class="about__body reveal" data-delay="1">
+          These workflows cut costs, increase revenue and free people of unproductive tasks.
+        </p>
+
+        <a class="link-arrow reveal" data-delay="2" href="https://wa.me/919980301901?text=Hi%20Mohammed%2C%20I%27d%20like%20to%20discuss%20automating%20some%20work%20in%20my%20business." target="_blank" rel="noopener">
+          Tell me what's eating your team's hours
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- ===== ABOUT VISUAL PLACEHOLDER — REPLACE THIS ===== -->
+      <figure class="photo photo--about reveal" data-delay="1">
+        <div class="photo__frame photo__frame--tall">
+          <!-- Same deal: drop a file named exactly  about-visual.jpg  into the assets
+               folder and it appears here automatically. -->
+          <img class="photo__img" src="assets/about-visual.jpg" alt="" onerror="this.remove()" />
+          <div class="photo__ph">
+            <span class="photo__mark">[ IMAGE PLACEHOLDER ]</span>
+            <span class="photo__hint">Drop a second image into the assets folder, named about-visual.jpg</span>
+          </div>
+          <span class="photo__corner photo__corner--tl" aria-hidden="true"></span>
+          <span class="photo__corner photo__corner--br" aria-hidden="true"></span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. SKILLS / WHAT I DO ============ -->
+<section class="section skills" id="skills">
+  <div class="wrap">
+    <p class="sec-label reveal"><span class="sec-label__num">/02</span> What I do</p>
+    <h2 class="sec-title display reveal">Capabilities</h2>
+  </div>
+
+  <!-- stacked sticky cards, mirrors the Process references -->
+  <div class="stack wrap" id="stack">
+
+    <article class="stack__card" style="--i:0">
+      <div class="stack__inner">
+        <header class="stack__head">
+          <h3 class="stack__title serif">Conversational agents</h3>
+          <span class="stack__num">/01</span>
+        </header>
+        <p class="stack__body">
+          WhatsApp, WeChat and Slack agents that handle enquiries and take real actions —
+          booking and lead qualification.
+        </p>
+        <ul class="chips">
+          <li>WhatsApp</li><li>WeChat</li><li>Slack</li><li>Enquiry handling</li><li>Booking</li><li>Lead qualification</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="stack__card" style="--i:1">
+      <div class="stack__inner">
+        <header class="stack__head">
+          <h3 class="stack__title serif">Workflow automation &amp; integration</h3>
+          <span class="stack__num">/02</span>
+        </header>
+        <p class="stack__body">
+          Connecting the systems your work already lives in — CRMs, Sheets, email and calendar —
+          so the handoffs stop being manual.
+        </p>
+        <ul class="chips">
+          <li>CRMs</li><li>Sheets</li><li>Email</li><li>Calendar</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="stack__card" style="--i:2">
+      <div class="stack__inner">
+        <header class="stack__head">
+          <h3 class="stack__title serif">Document &amp; knowledge systems</h3>
+          <span class="stack__num">/03</span>
+        </header>
+        <p class="stack__body">
+          RAG over company documents, contract and invoice parsing, and internal Q&amp;A assistants
+          that answer from what your business already knows.
+        </p>
+        <ul class="chips">
+          <li>RAG</li><li>Contract parsing</li><li>Invoice parsing</li><li>Internal Q&amp;A</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="stack__card" style="--i:3">
+      <div class="stack__inner">
+        <header class="stack__head">
+          <h3 class="stack__title serif">Custom internal tools</h3>
+          <span class="stack__num">/04</span>
+        </header>
+        <p class="stack__body">
+          Dashboards and apps built around the agent, so your team has somewhere to watch it,
+          steer it and trust it.
+        </p>
+        <ul class="chips">
+          <li>Dashboards</li><li>Internal apps</li><li>Agent controls</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- tech marquee -->
+  <div class="wrap">
+    <p class="sec-label sec-label--mt reveal"><span class="sec-label__num">/</span> Tech I build with</p>
+  </div>
+  <div class="marquee" aria-label="Technologies: Python/FastAPI, React, PostgreSQL, Supabase, Claude Code, Codex, Cursor, Hermes Agent, n8n, MCP, Railway, Vercel">
+    <div class="marquee__track" aria-hidden="true">
+      <span class="marquee__set">
+        <b>Python / FastAPI</b><i>◆</i><b>React</b><i>◆</i><b>PostgreSQL</b><i>◆</i><b>Supabase</b><i>◆</i><b>Claude Code</b><i>◆</i><b>Codex</b><i>◆</i><b>Cursor</b><i>◆</i><b>Hermes Agent</b><i>◆</i><b>n8n</b><i>◆</i><b>MCP</b><i>◆</i><b>Railway</b><i>◆</i><b>Vercel</b><i>◆</i>
+      </span>
+      <span class="marquee__set">
+        <b>Python / FastAPI</b><i>◆</i><b>React</b><i>◆</i><b>PostgreSQL</b><i>◆</i><b>Supabase</b><i>◆</i><b>Claude Code</b><i>◆</i><b>Codex</b><i>◆</i><b>Cursor</b><i>◆</i><b>Hermes Agent</b><i>◆</i><b>n8n</b><i>◆</i><b>MCP</b><i>◆</i><b>Railway</b><i>◆</i><b>Vercel</b><i>◆</i>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PROJECTS ============ -->
+<!--
+  ██████████████████████████████████████████████████████████████████████████
+  PROJECTS — 2 real projects, both complete. No placeholders left here.
+  A project appears TWICE: as a name in the LEFT list and as an <article> on the right.
+  Keep those two names identical. To remove a project, delete both.
+  To add a third, see the copy-paste comment at the end of this section.
+  ██████████████████████████████████████████████████████████████████████████
+-->
+<section class="section projects" id="projects">
+  <div class="wrap">
+    <p class="sec-label reveal"><span class="sec-label__num">/03</span> Selected work</p>
+    <h2 class="sec-title display reveal">Projects</h2>
+  </div>
+
+  <div class="wrap proj">
+    <!-- LEFT: sticky index of project names -->
+    <div class="pindex" id="pindex">
+      <ul class="pindex__list">
+        <li><a class="pindex__item" href="#project-1" data-target="project-1"><span class="pindex__label display">WhatsApp Cake Order Agent</span></a></li>
+        <li><a class="pindex__item" href="#project-2" data-target="project-2"><span class="pindex__label display">Real Estate Lead Qualification Agent</span></a></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: detail panels -->
+    <div class="pdetails" id="pdetails">
+
+      <article class="pcard" id="project-1">
+        <header class="pcard__head">
+          <h3 class="pcard__title serif">WhatsApp Cake Order Agent</h3>
+          <span class="pcard__num">/01</span>
+        </header>
+        <p class="pcard__desc">
+          A conversational AI agent that acts as a 24/7 virtual shop assistant on WhatsApp.
+          Customers chat with it naturally — asking about cakes, placing orders, booking custom
+          designs — and it handles everything automatically without any human needed.
+        </p>
+        <div class="pcard__block">
+          <span class="pcard__k">The problem it solved</span>
+          <ul class="plist">
+            <li>They can't respond to WhatsApp messages at night or on weekends.</li>
+            <li>Staff waste time answering the same questions repeatedly — prices, hours, availability.</li>
+            <li>Premium products go unmentioned because staff forget to upsell.</li>
+            <li>Orders get lost in WhatsApp chats with no record kept.</li>
+          </ul>
+        </div>
+        <div class="pcard__block">
+          <span class="pcard__k">Tech stack</span>
+          <ul class="chips">
+            <li>Python</li><li>Anthropic Claude API</li><li>Streamlit</li>
+            <li>Google Sheets API</li><li>gspread</li><li>JSON</li>
+          </ul>
+        </div>
+        <a class="pcard__link" href="https://cakebox-agent.streamlit.app" target="_blank" rel="noopener">cakebox-agent.streamlit.app <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="pcard" id="project-2">
+        <header class="pcard__head">
+          <h3 class="pcard__title serif">Real Estate Lead Qualification Agent</h3>
+          <span class="pcard__num">/02</span>
+        </header>
+        <p class="pcard__desc">
+          A conversational AI agent that acts as a 24/7 virtual property assistant. Potential
+          buyers and renters chat with it naturally — asking about properties, budgets, locations
+          — and it qualifies them automatically, captures their details and logs every lead to a
+          spreadsheet for the sales team to follow up.
+        </p>
+        <div class="pcard__block">
+          <span class="pcard__k">The problem it solved</span>
+          <ul class="plist">
+            <li>Enquiries come in at night and weekends when no one is available.</li>
+            <li>Sales staff waste hours talking to unqualified leads who are just browsing.</li>
+            <li>Hot leads don't get called back fast enough because no one tracked them properly.</li>
+            <li>Receptionists forget to ask the right qualification questions consistently.</li>
+          </ul>
+        </div>
+        <div class="pcard__block">
+          <span class="pcard__k">Tech stack</span>
+          <ul class="chips">
+            <li>Python</li><li>Anthropic Claude API</li><li>Google Sheets API</li>
+            <li>gspread</li><li>Regex</li><li>JSON</li>
+          </ul>
+        </div>
+        <!-- No public link for this one (client work). If a URL ever exists, add:
+             <a class="pcard__link" href="URL" target="_blank" rel="noopener">label <span aria-hidden="true">↗</span></a> -->
+      </article>
+
+<!-- ===== TO ADD A THIRD PROJECT LATER =====
+     1. Copy one <article class="pcard"> block above and paste it here.
+     2. Change its id to "project-3" and its number to /03.
+     3. Add a matching line to the LEFT list higher up in this file:
+        <li><a class="pindex__item" href="#project-3" data-target="project-3"><span class="pindex__label display">Your project name</span></a></li>
+     The name in the left list and the <h3> title should read the same.
+-->
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. CONTACT / CTA ============ -->
+<section class="section contact" id="contact">
+  <div class="contact__glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="sec-label reveal"><span class="sec-label__num">/04</span> Get in touch</p>
+
+    <div class="contact__grid">
+      <div class="contact__left">
+        <h2 class="display contact__title" data-split>Have a project in mind?</h2>
+
+        <p class="contact__lead reveal" data-delay="1">
+          Fastest way to reach me is WhatsApp. Prefer a call? Fill the form and I'll
+          get back to you.
+        </p>
+
+        <div class="contact__actions reveal" data-delay="2">
+          <a class="btn btn--wa btn--lg magnetic" href="https://wa.me/919980301901?text=Hi%20Mohammed%2C%20I%27d%20like%20to%20talk%20about%20an%20AI%20agent%20for%20my%20business." target="_blank" rel="noopener">
+            <span class="btn__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 2.13 11.9c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.21h.01a9.9 9.9 0 0 0 9.9-9.9A9.9 9.9 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.81.83-3.03-.2-.31a8.17 8.17 0 0 1-1.25-4.36 8.22 8.22 0 1 1 8.22 8.22Zm4.5-6.15c-.24-.12-1.46-.72-1.69-.8-.22-.09-.39-.12-.55.12s-.63.8-.77.96c-.14.17-.28.18-.52.06a6.72 6.72 0 0 1-3.36-2.94c-.25-.44.25-.4.72-1.35.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.61 4.15 3.66 1.54.67 2.15.72 2.92.61.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.46-.29Z"/></svg>
+            </span>
+            Message me on WhatsApp
+          </a>
+        </div>
+
+        <ul class="contact__direct reveal" data-delay="3">
+          <li>
+            <span class="contact__k">Email</span>
+            <a href="mailto:mdsyd23@gmail.com">mdsyd23@gmail.com</a>
+            <button class="copy" type="button" data-copy="mdsyd23@gmail.com" aria-label="Copy email address">
+              Copy <span class="copy__ico" aria-hidden="true">⧉</span>
+            </button>
+          </li>
+          <li>
+            <span class="contact__k">Phone</span>
+            <a href="tel:+919980301901">+91 99803 01901</a>
+            <button class="copy" type="button" data-copy="+919980301901" aria-label="Copy phone number">
+              Copy <span class="copy__ico" aria-hidden="true">⧉</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ===== BOOK A CALL FORM =====
+           Sends to WhatsApp until Tally is connected.
+           TO SWITCH TO TALLY LATER: replace this whole <form> with your Tally embed
+           snippet, or point form action= at your Tally endpoint and delete the
+           submit handler in js/main.js (see "FORM → WHATSAPP" block).
+      -->
+      <div class="contact__right reveal" data-delay="1">
+        <form class="form" id="callForm" novalidate>
+          <h3 class="form__title">Book a call</h3>
+
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required />
+            <span class="field__err" data-err></span>
+          </div>
+
+          <div class="field">
+            <label for="f-phone">Phone number</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 00000 00000" required />
+            <span class="field__err" data-err></span>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+            <span class="field__err" data-err></span>
+          </div>
+
+          <div class="field">
+            <label for="f-req">Specify your requirement in brief</label>
+            <textarea id="f-req" name="requirement" rows="4" placeholder="What work do you want taken off your team?" required></textarea>
+            <span class="field__err" data-err></span>
+          </div>
+
+          <button class="btn btn--wa btn--block" type="submit">
+            <span class="btn__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 2.13 11.9c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.21h.01a9.9 9.9 0 0 0 9.9-9.9A9.9 9.9 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.81.83-3.03-.2-.31a8.17 8.17 0 0 1-1.25-4.36 8.22 8.22 0 1 1 8.22 8.22Zm4.5-6.15c-.24-.12-1.46-.72-1.69-.8-.22-.09-.39-.12-.55.12s-.63.8-.77.96c-.14.17-.28.18-.52.06a6.72 6.72 0 0 1-3.36-2.94c-.25-.44.25-.4.72-1.35.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.61 4.15 3.66 1.54.67 2.15.72 2.92.61.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.46-.29Z"/></svg>
+            </span>
+            Send via WhatsApp
+          </button>
+
+          <p class="form__note" role="status" id="formNote">
+            Opens WhatsApp with your details filled in — nothing is stored on this site.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 6. FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+
+    <div class="footer__brand">
+      <p class="footer__name display">Mohammed Sayeed</p>
+      <p class="footer__role">AI Agent Builder</p>
+      <a class="footer__mail" href="mailto:mdsyd23@gmail.com">mdsyd23@gmail.com</a>
+      <button class="copy copy--outline" type="button" data-copy="mdsyd23@gmail.com" aria-label="Copy email address">
+        Copy <span class="copy__ico" aria-hidden="true">⧉</span>
+      </button>
+    </div>
+
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ===== SOCIAL LINKS — REPLACE THE href="#" WITH YOUR REAL PROFILE URLS ===== -->
+    <div class="footer__social">
+      <span class="footer__k">Elsewhere</span>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/sayeedmohd/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/mdsaeed24" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://instagram.com/Saeed2z" target="_blank" rel="noopener">Instagram</a></li>
+        <!-- YouTube, Substack and X removed on purpose (not active yet).
+             To bring one back, copy the GitHub line above and swap the name + URL. -->
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="wrap footer__bottom">
+    <p>© <span id="year">2026</span> Mohammed Sayeed. All rights reserved.</p>
+    <a class="footer__top" href="#hero">Back to top <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+
+<!-- floating WhatsApp button (mobile-first, always reachable) -->
+<a class="fab" href="https://wa.me/919980301901?text=Hi%20Mohammed%2C%20I%27d%20like%20to%20talk%20about%20an%20AI%20agent." target="_blank" rel="noopener" aria-label="Message me on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2A9.9 9.9 0 0 0 2.13 11.9c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.21h.01a9.9 9.9 0 0 0 9.9-9.9A9.9 9.9 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.81.83-3.03-.2-.31a8.17 8.17 0 0 1-1.25-4.36 8.22 8.22 0 1 1 8.22 8.22Zm4.5-6.15c-.24-.12-1.46-.72-1.69-.8-.22-.09-.39-.12-.55.12s-.63.8-.77.96c-.14.17-.28.18-.52.06a6.72 6.72 0 0 1-3.36-2.94c-.25-.44.25-.4.72-1.35.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.61 4.15 3.66 1.54.67 2.15.72 2.92.61.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.46-.29Z"/></svg>
+  <span class="fab__label">WhatsApp</span>
+</a>
+
+<!-- toast for copy / placeholder-link feedback -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
