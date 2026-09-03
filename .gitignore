@@ -1,0 +1,12 @@
+# macOS junk
+.DS_Store
+*.DS_Store
+Thumbs.db
+
+# Design reference screenshots — used to build the site, not part of it.
+# 7.9 MB of someone else's website; no reason to publish it.
+refrences/
+
+# Working notes: business strategy, personal phone/email, session log.
+# The deployed repo is PUBLIC — this must never be pushed.
+claude.md
