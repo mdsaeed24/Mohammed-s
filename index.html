@@ -293,29 +293,42 @@
           <span class="pcard__num">/02</span>
         </header>
         <p class="pcard__desc">
-          A conversational AI agent that acts as a 24/7 virtual property assistant. Potential
-          buyers and renters chat with it naturally — asking about properties, budgets, locations
-          — and it qualifies them automatically, captures their details and logs every lead to a
-          spreadsheet for the sales team to follow up.
+          A Telegram agent that holds a real conversation with property leads — greeting them,
+          qualifying them on type, budget and area, showing matching listings, sending photos
+          when asked, and booking site visits. It speaks English, Hindi, Kannada, Tamil and
+          Konkani, and holds whichever language the lead opens in.
         </p>
         <div class="pcard__block">
           <span class="pcard__k">The problem it solved</span>
           <ul class="plist">
-            <li>Enquiries come in at night and weekends when no one is available.</li>
-            <li>Sales staff waste hours talking to unqualified leads who are just browsing.</li>
-            <li>Hot leads don't get called back fast enough because no one tracked them properly.</li>
-            <li>Receptionists forget to ask the right qualification questions consistently.</li>
+            <li>Enquiries arrive at night and on weekends when no one is available to answer.</li>
+            <li>Sales staff spend hours qualifying leads who were never going to buy.</li>
+            <li>Leads across five languages get inconsistent answers depending on who replies.</li>
+            <li>Site visits and lead details live in WhatsApp threads with no reliable record.</li>
+          </ul>
+        </div>
+        <div class="pcard__block">
+          <span class="pcard__k">How it is built</span>
+          <ul class="plist">
+            <li>Deterministic Python owns every decision — which properties match, what stage the
+              conversation is in, whether a booking is real. The model only reads intent and words
+              the reply, so it can never invent a property or a price.</li>
+            <li>Photos are sent one at a time with consent, not dumped in a batch. A listing with
+              no photos says so and offers a site visit instead.</li>
+            <li>Every conversation asks who is speaking before anything is recorded against a lead,
+              so a forwarded link never attributes one person's booking to another.</li>
+            <li>132 tests, several of them regressions from bugs that only surfaced in real
+              conversations.</li>
           </ul>
         </div>
         <div class="pcard__block">
           <span class="pcard__k">Tech stack</span>
           <ul class="chips">
-            <li>Python</li><li>Anthropic Claude API</li><li>Google Sheets API</li>
-            <li>gspread</li><li>Regex</li><li>JSON</li>
+            <li>Python</li><li>FastAPI</li><li>Anthropic Claude API</li><li>Telegram Bot API</li>
+            <li>Supabase</li><li>PostgreSQL</li><li>Google Sheets API</li><li>pytest</li>
           </ul>
         </div>
-        <!-- No public link for this one (client work). If a URL ever exists, add:
-             <a class="pcard__link" href="URL" target="_blank" rel="noopener">label <span aria-hidden="true">↗</span></a> -->
+        <a class="pcard__link" href="https://github.com/mdsaeed24/realestate-telegram-agent" target="_blank" rel="noopener">github.com/mdsaeed24/realestate-telegram-agent <span aria-hidden="true">↗</span></a>
       </article>
 
 <!-- ===== TO ADD A THIRD PROJECT LATER =====
